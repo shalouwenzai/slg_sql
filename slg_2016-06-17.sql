@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.11)
 # Database: slg
-# Generation Time: 2016-06-15 11:24:17 +0000
+# Generation Time: 2016-06-17 06:25:40 +0000
 # ************************************************************
 
 
@@ -37,7 +37,10 @@ LOCK TABLES `account` WRITE;
 
 INSERT INTO `account` (`uid`, `token`, `authorization_type`)
 VALUES
-	(24,'12D97gTWE7Ij00GUnHYDuCpo5SWVfYqW',0);
+	(24,'12D97gTWE7Ij00GUnHYDuCpo5SWVfYqW',0),
+	(25,'DFT27cgHwvFha1T0E9pN9WRGJ9QMe7gh',0),
+	(26,'Vpl1Bm28FEZKIexqkRHrYejtIlvJGZRb',0),
+	(27,'isYuARF1YtJVLBwLtPghuSSzd7dt2bBa',0);
 
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -49,7 +52,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `player`;
 
 CREATE TABLE `player` (
-  `uid` int(11) NOT NULL,
+  `pid` int(11) unsigned NOT NULL,
   `name` tinytext COMMENT '名字',
   `level` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '等级',
   `vip` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'vip等级',
@@ -94,11 +97,14 @@ CREATE TABLE `player` (
 LOCK TABLES `player` WRITE;
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
 
-INSERT INTO `player` (`uid`, `name`, `level`, `vip`, `gold`, `buyGold`, `exp`, `vipExp`, `wood`, `food`, `iron`, `silver`, `steel`, `stamina`, `gainGold`, `costGold`, `gainExp`, `gainVipExp`, `gainStamina`, `costStamina`, `gainWood`, `costWood`, `grabWood`, `lostWood`, `gainFood`, `costFood`, `grabFood`, `lostFood`, `gainIron`, `costIron`, `grabIron`, `lostIron`, `gainSilver`, `costSilver`, `grabSilver`, `lostSilver`, `gainSteel`, `costSteel`, `grabSteel`, `lostSteel`)
+INSERT INTO `player` (`pid`, `name`, `level`, `vip`, `gold`, `buyGold`, `exp`, `vipExp`, `wood`, `food`, `iron`, `silver`, `steel`, `stamina`, `gainGold`, `costGold`, `gainExp`, `gainVipExp`, `gainStamina`, `costStamina`, `gainWood`, `costWood`, `grabWood`, `lostWood`, `gainFood`, `costFood`, `grabFood`, `lostFood`, `gainIron`, `costIron`, `grabIron`, `lostIron`, `gainSilver`, `costSilver`, `grabSilver`, `lostSilver`, `gainSteel`, `costSteel`, `grabSteel`, `lostSteel`)
 VALUES
 	(22,NULL,0,0,38961,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
 	(23,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
-	(24,'a大西瓜1',0,0,435001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+	(24,'a大西瓜1',0,0,3007,0,0,0,220000,42000,4000,22000,10000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+	(25,NULL,0,0,3000,0,0,0,10000,10000,10000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+	(26,NULL,0,0,5000,0,0,0,120000,0,50000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+	(27,NULL,0,0,0,0,0,0,30000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 UNLOCK TABLES;
